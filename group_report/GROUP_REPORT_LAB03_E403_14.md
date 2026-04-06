@@ -1,9 +1,12 @@
-# Báo cáo nhóm — VinFast LangGraph Agent (cập nhật theo repo hiện tại)
+# Group Report: Lab 3 - Production-Grade Agentic System
+# Vinfast Sales Agent (ReAct)
 
-- **Tên nhóm:** [điền]
-- **Thành viên (5):** xem phân công tại `../TASK_DIVISION_5_MEMBERS.md`
-- **Rubric tham chiếu:** `../RUBRIC_LAB3_REFERENCE.md` (map từ Day-3 Lab `SCORING.md`)
-- **Log phân tích v1 (minh chứng):** `logs/vinfast_20260406_090834.log`
+- **Team Name: lab3-e403-14**
+- **Team Members: [2A202600059 - Ho Quang Hien, 2A202600212 - Nguyen Thi Thu Hien, 2A202600287 - Ta Thi Thuy Duong, 2A202600115 - Luong Thanh Hau, 2A202600323 - Trinh Duc An]**
+
+- **Deployment Date: 06-04-2026 (DD-MM-YYYY)**
+
+- **Log tests cases phân tích v1 (minh chứng):** `logs/vinfast_20260406_090834.log`
 
 ---
 
@@ -52,11 +55,11 @@ OpenAI (`ChatOpenAI`), `.env`: `OPENAI_API_KEY`, `DEFAULT_MODEL`.
 
 | Case | v1 trong log | Giải thích |
 |------|----------------|------------|
-| **T01** | ✅ | Gọi `check_price` đúng; trả lời **1.259.000.000 VNĐ**. |
-| **T02** | ❌ **B2** | Sau `check_price` chỉ có giá niêm yết; model nói *chưa có dữ liệu KM tháng 4* — **không** nêu **50.000.000** (có trong `PROMOTIONS` nhưng không vào prompt v1). |
-| **T03** | ⚠️ ✅ matcher / ❌ nghiệp vụ | Gọi `calculate_monthly_payment` với **price = 1.259.000.000** (chưa trừ KM 30tr) → **21.722.549**/tháng; v2 dùng **1.229.000.000** → **21.204.935**. |
-| **T04** | ❌ | **Lượt 1:** vẫn **gọi** `check_price('Toyota Camry hybrid')` → nhận `error` từ tool (chỉ sau đó mới giải thích chỉ VinFast). **Lượt 2:** tính góp trên **322.000.000**, nói *chưa có KM* — **không** đạt chuỗi **10.000.000** trong `per_turn` lượt 2. |
-| **T05** | ❌ | **Lượt 1:** Khách hỏi **50 tháng**, v1 gọi tool với **`months: 48`** ngay (né lỗi tool) — không phải flow “gọi đúng 50 → nhận error” như v2. **Lượt 2** trả lời *~16,76 triệu/tháng* — **không** chứa chuỗi `16.760.846` / `16760846` trong `expected_contains` → dễ FAIL matcher. |
+| **T01** | Pass | Gọi `check_price` đúng; trả lời **1.259.000.000 VNĐ**. |
+| **T02** | !!! Not Pass **B2** | Sau `check_price` chỉ có giá niêm yết; model nói *chưa có dữ liệu KM tháng 4* — **không** nêu **50.000.000** (có trong `PROMOTIONS` nhưng không vào prompt v1). |
+| **T03** | !!! Pass matcher / Not Pass nghiệp vụ | Gọi `calculate_monthly_payment` với **price = 1.259.000.000** (chưa trừ KM 30tr) → **21.722.549**/tháng; v2 dùng **1.229.000.000** → **21.204.935**. |
+| **T04** | !!! Not Pass | **Lượt 1:** vẫn **gọi** `check_price('Toyota Camry hybrid')` → nhận `error` từ tool (chỉ sau đó mới giải thích chỉ VinFast). **Lượt 2:** tính góp trên **322.000.000**, nói *chưa có KM* — **không** đạt chuỗi **10.000.000** trong `per_turn` lượt 2. |
+| **T05** | !!! Not Pass | **Lượt 1:** Khách hỏi **50 tháng**, v1 gọi tool với **`months: 48`** ngay (né lỗi tool) — không phải flow “gọi đúng 50 → nhận error” như v2. **Lượt 2** trả lời *~16,76 triệu/tháng* — **không** chứa chuỗi `16.760.846` / `16760846` trong `expected_contains` → dễ FAIL matcher. |
 
 ---
 
@@ -77,7 +80,7 @@ OpenAI (`ChatOpenAI`), `.env`: `OPENAI_API_KEY`, `DEFAULT_MODEL`.
 
 ---
 
-## 7. Bonus (gợi ý)
+## 7. Bonus
 
 | Bonus | Minh chứng |
 |-------|------------|
@@ -86,5 +89,3 @@ OpenAI (`ChatOpenAI`), `.env`: `OPENAI_API_KEY`, `DEFAULT_MODEL`.
 | Live demo | `chat_demo.py` |
 
 ---
-
-*Bổ sung tên nhóm và số đo mới nhất sau mỗi lần chạy eval. Template đầy đủ: `TEMPLATE_GROUP_REPORT.md`.*
