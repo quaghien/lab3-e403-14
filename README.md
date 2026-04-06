@@ -14,7 +14,6 @@ So sánh **agent v1** (prompt mỏng, lỗi B1/B2) và **agent v2** (cùng graph
 | `chat_demo.py` | Chat terminal nhiều lượt (`/quit`, `/clear`) |
 | `report/` | Báo cáo nhóm `group_report/`, template cá nhân `individual_reports/`, rubric Lab 3 |
 
-Chi tiết phân công 5 người: `report/MO_TA_CONG_VIEC_TUNG_THANH_VIEN.md`. Rubric mini-lab: `SCORING.md`.
 
 ## Setup & chạy
 
