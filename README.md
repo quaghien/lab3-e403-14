@@ -33,7 +33,6 @@ Luôn chạy từ thư mục gốc (cùng cấp `src/`). `FILE_LOG=0` nếu khô
 
 `START` → node **`llm`** → `add_conditional_edges`: còn **`tool_calls`** thì vào node **`tools`** (ToolNode), không thì **`END`**. Sau `tools` quay lại **`llm`**; kết quả tool được **append** vào `state["messages"]`.
 
-Xem thêm sơ đồ chi tiết (Mermaid) có thể mở `EVALUATION.md` hoặc lịch sử README trong git nếu đã gỡ bớt — logic không đổi.
 
 ## Thêm test / tool
 
