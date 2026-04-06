@@ -1,7 +1,9 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
 Student Name: Hồ Quang Hiển
+
 Student ID: 2A202600059
+
 Date: 06-04-2026 (DD-MM-YYYY)
 
 - **Vai trò:** Tool layer + mock pricing 
