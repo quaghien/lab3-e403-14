@@ -1,9 +1,8 @@
-# Báo cáo cá nhân — Lương Thanh Hậu
-
-- **Vai trò:** Packaging, môi trường, tài liệu người dùng — chạy độc lập khỏi repo lab chính  
-- **Ngày:** 2026-04-06  
-- **Tham chiếu:** `README.md`, `requirements.txt`, `.env.example`, `.gitignore`
-
+# Báo cáo cá nhân 
+- Student Name: Lương Thanh Hậu
+- Student ID: 2A202600115
+- Date: 06-04-2026
+- Role: `README.md`, `requirements.txt`, `.env.example`, `.gitignore`
 ---
 
 ## I. Đóng góp kỹ thuật
