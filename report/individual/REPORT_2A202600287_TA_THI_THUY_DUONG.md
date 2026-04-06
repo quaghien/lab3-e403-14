@@ -15,7 +15,6 @@ Date: 6/4/2026
 
 - **`SCORING.md`:** Chuẩn hoá bảng mục tiêu so sánh v1/v2 (simple / multi-step / edge), mapping bug B1/B2 ↔ file mã nguồn.  
 - **`INSTRUCTOR_GUIDE.md`:** Timeline 30 phút, điểm học LangGraph vs prompt ablation, nhấn mạnh project chạy độc lập một folder.  
-- **`report/evaluation_template.md`:** Form điền pass rate, latency, nhận xét B1/B2 sau mỗi lần chạy `run_evaluation.py`.
 
 Mục tiêu: giảng viên và nhóm có **ngôn ngữ chung** khi chấm, không phải đoán tiêu chí.
 

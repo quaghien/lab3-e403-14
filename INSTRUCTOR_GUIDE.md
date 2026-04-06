@@ -43,11 +43,16 @@ This guide is designed for instructors to lead a 240-minute (4-hour) intensive l
 
 ## 💡 Teaching Tips & Examples
 
-### 🏦 Recommended Scenario: "The Smart E-commerce Assistant"
-- **Tool 1**: `check_stock(item_name)` -> Returns available quantity.
-- **Tool 2**: `get_discount(coupon_code)` -> Returns percentage.
-- **Tool 3**: `calc_shipping(weight, destination)` -> Returns cost.
-- **Test Case**: "I want to buy 2 iPhones using code 'WINNER' and ship to Hanoi. What is the total price?"
+### 🚗 Case Study: VinFast ReAct Logic
+- **Scenario**: Use the team's VinFast dataset and logs to verify the ReAct loop instead of a generic e-commerce example.
+- **Tool 1**: `lookup_vehicle(model, year)` -> Returns vehicle details and available promotions.
+- **Tool 2**: `calculate_discount(code, base_price)` -> Returns the final price after promotion.
+- **Tool 3**: `check_financing(plan)` -> Returns monthly payment and loan eligibility.
+- **Test Case**: "A customer asks for a VinFast VF3 promotion, then checks whether a KIA service coupon can be applied. What are the valid discounts and final recommendation?"
+- **Teaching Focus**:
+  - Confirm the agent correctly uses the tools in sequence.
+  - Use the `logs/` and `report/` files to show how v1 failed on substring matching and v2 improved with structured reasoning.
+  - Emphasize that the project should execute from a single folder so instructors can reproduce results easily.
 
 ### ⚠️ Common Pitfalls to Watch For
 1.  **Infinite Loops**: The agent repeats the same "Thought" forever.
